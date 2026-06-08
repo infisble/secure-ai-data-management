@@ -9,11 +9,12 @@ This repository is intentionally vendor-neutral. It summarizes operational pract
 - `docs/best-practices.md` - consolidated guidance for agent design, data protection, access control, guardrails, evaluations, and operations.
 - `docs/banking-reference-architecture.md` - reference architecture for customer-data-heavy workflows.
 - `docs/threat-model.md` - threat model for agents, tools, RAG, connectors, and audit trails.
+- `docs/eu-ai-data-governance.md` - EU AI Act, GDPR, and data-governance mapping for agentic systems.
 - `docs/source-map.md` - source map and why each source matters.
 - `policies/` - copyable policy templates for data classification, tool permissions, and human approval.
 - `checklists/` - release and review checklists.
-- `examples/secure-agent/` - runnable safe patterns: redaction, RBAC, policy checks, audit logging.
-- `examples/anti-patterns/` - runnable unsafe patterns showing what not to do.
+- `examples/secure-agent/` - runnable safe patterns: redaction, RBAC, policy checks, audit logging, database access, RAG/vector search, and LLM gateway.
+- `examples/anti-patterns/` - runnable unsafe patterns showing what not to do with prompts, tools, databases, RAG, and model calls.
 - `tests/run_all.py` - local test runner for examples.
 
 ## Quick start
@@ -23,6 +24,9 @@ Requires Python 3.10+ and no third-party dependencies.
 ```bash
 python tests/run_all.py
 python examples/secure-agent/secure_banking_agent.py
+python examples/secure-agent/secure_db_access.py
+python examples/secure-agent/secure_rag.py
+python examples/secure-agent/llm_gateway.py
 python examples/anti-patterns/insecure_agent.py
 ```
 

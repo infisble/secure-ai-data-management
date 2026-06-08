@@ -17,6 +17,10 @@ This repository was created from public guidance available as of June 2026. The 
 - OWASP Top 10 for LLM Applications: https://owasp.org/www-project-top-10-for-large-language-model-applications/
 - NIST AI Risk Management Framework: https://www.nist.gov/itl/ai-risk-management-framework
 - NIST AI 600-1 Generative AI Profile: https://www.nist.gov/itl/ai-risk-management-framework
+- European Commission AI Act overview: https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai
+- EU AI Act text: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+- GDPR Article 22: https://gdpr-info.eu/art-22-gdpr/
+- EDPB Opinion 28/2024 on AI models and personal data: https://www.edpb.europa.eu/our-work-tools/our-documents/opinion-board-art-64/opinion-282024-certain-data-protection-aspects_en
 
 ## How to use this map
 
