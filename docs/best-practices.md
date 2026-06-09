@@ -1,5 +1,7 @@
 # Best Practices for Secure AI Agents
 
+Evidence base: [OpenAI safety best practices](https://platform.openai.com/docs/guides/safety-best-practices), [Anthropic jailbreak mitigation](https://docs.anthropic.com/en/docs/test-and-evaluate/strengthen-guardrails/mitigate-jailbreaks), [OWASP LLM Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/), [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework), [European Commission AI Act overview](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai).
+
 ## 1. Start with governance, not prompts
 
 Before prompt engineering, define:
@@ -90,6 +92,19 @@ Do not rely on a single prompt instruction. Combine:
 - Output checks: sensitive data leakage detection, schema validation, citation/source checks.
 - Human review for high-risk cases.
 - Monitoring and incident response.
+
+```mermaid
+flowchart TD
+    INPUT[Input] --> AUTH[Authentication and authorization]
+    AUTH --> MIN[Data minimization]
+    MIN --> PRE[Input safety and prompt-injection checks]
+    PRE --> RET[ACL-aware retrieval]
+    RET --> MODEL[Model call]
+    MODEL --> POST[Output validation and sensitive-data scan]
+    POST --> POLICY[Tool/action policy]
+    POLICY --> HUMAN[Human approval when required]
+    HUMAN --> AUDIT[Audit and monitoring]
+```
 
 ## 7. RAG and search must be ACL-aware
 

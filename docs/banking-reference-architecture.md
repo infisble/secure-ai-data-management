@@ -1,5 +1,7 @@
 # Banking Reference Architecture
 
+Source anchors: [European Commission AI Act overview](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai), [GDPR Article 5](https://gdpr-info.eu/art-5-gdpr/), [OWASP LLM Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/), [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework).
+
 ## Control plane
 
 The control plane owns policy, identity, approvals, and audit.
@@ -38,6 +40,24 @@ Components:
 8. Tool gateway validates tool call deterministically.
 9. Human approval is required for consequential actions.
 10. Output is validated, redacted, cited, and logged.
+
+```mermaid
+flowchart LR
+    USER[Employee or customer] --> APP[Banking workflow app]
+    APP --> POLICY[Policy gateway]
+    POLICY --> RAG[ACL-aware retrieval]
+    RAG --> MIN[Minimize and redact]
+    MIN --> MODEL[Approved model route]
+    MODEL --> CHECK[Output checks]
+    CHECK --> APPROVAL{Consequential action?}
+    APPROVAL -->|No| ANSWER[Answer with citations]
+    APPROVAL -->|Yes| HUMAN[Human approval]
+    HUMAN --> TOOL[Tool gateway]
+    TOOL --> CORE[(Core banking)]
+    APP --> AUDIT[(Audit)]
+    POLICY --> AUDIT
+    TOOL --> AUDIT
+```
 
 ## Recommended isolation
 

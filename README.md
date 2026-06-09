@@ -4,6 +4,14 @@ Practical repository for designing, reviewing, and testing AI agents in regulate
 
 This repository is intentionally vendor-neutral. It summarizes operational practices from OpenAI, Anthropic, OWASP, NIST, and financial-sector risk guidance, then turns them into checklists and runnable examples.
 
+Every major recommendation should be traceable to a public source. Start with:
+
+- [docs/evidence-matrix.md](docs/evidence-matrix.md) - control-by-control source matrix.
+- [docs/diagrams.md](docs/diagrams.md) - Mermaid architecture, data-flow, approval, RAG, and incident diagrams.
+- [docs/eu-regulatory-map.md](docs/eu-regulatory-map.md) - EU AI Act, GDPR, NIS2, DORA, Data Act, Data Governance Act, and banking implications.
+- [docs/cloud-guardrails.md](docs/cloud-guardrails.md) - cloud/provider guardrails and where they do and do not help.
+- [docs/source-map.md](docs/source-map.md) - curated primary source links.
+
 ## What is inside
 
 - `docs/best-practices.md` - consolidated guidance for agent design, data protection, access control, guardrails, evaluations, and operations.
@@ -12,6 +20,10 @@ This repository is intentionally vendor-neutral. It summarizes operational pract
 - `docs/eu-ai-data-governance.md` - EU AI Act, GDPR, and data-governance mapping for agentic systems.
 - `docs/evaluation-strategy.md` - what to test before release and in production.
 - `docs/operations-runbook.md` - daily/weekly operations, kill switch, and incident triage.
+- `docs/evidence-matrix.md` - recommended controls mapped to sources.
+- `docs/cloud-guardrails.md` - AWS, Azure, OpenAI, Anthropic, and cloud control patterns.
+- `docs/diagrams.md` - visual diagrams for reviewers and engineers.
+- `docs/eu-regulatory-map.md` - EU-focused obligations and implementation artifacts.
 - `docs/source-map.md` - source map and why each source matters.
 - `policies/` - copyable policy templates for data classification, tool permissions, and human approval.
 - `checklists/` - release and review checklists.
@@ -43,6 +55,14 @@ Treat every AI agent as a privileged software actor:
 - It must never receive more customer data than the current task requires.
 - It must not execute irreversible or customer-impacting actions without deterministic policy checks and human approval.
 - It needs continuous evaluation against prompt injection, sensitive data disclosure, excessive agency, insecure output handling, and overreliance.
+
+## How to read this repository
+
+1. Read [docs/eu-regulatory-map.md](docs/eu-regulatory-map.md) if the system touches EU customers, employees, financial services, credit, fraud, identity, or essential services.
+2. Read [docs/evidence-matrix.md](docs/evidence-matrix.md) to understand why each control exists and which source supports it.
+3. Review [docs/diagrams.md](docs/diagrams.md) with architecture, security, legal, and data-protection reviewers.
+4. Run the examples in [docs/command-cookbook.md](docs/command-cookbook.md).
+5. Use the checklists before release and after incidents.
 
 ## Non-goals
 
