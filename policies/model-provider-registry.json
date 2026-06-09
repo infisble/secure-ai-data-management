@@ -1,0 +1,28 @@
+{
+  "policy_version": "2026-06-10",
+  "approved_models": [
+    {
+      "model": "approved-frontier-model",
+      "provider": "approved-provider",
+      "allowed_data_classes": ["public", "internal", "confidential"],
+      "allowed_regions": ["EU"],
+      "training_on_inputs": false,
+      "prompt_retention_days": 30,
+      "requires_redaction": true
+    },
+    {
+      "model": "approved-small-model",
+      "provider": "approved-provider",
+      "allowed_data_classes": ["public", "internal"],
+      "allowed_regions": ["EU", "US"],
+      "training_on_inputs": false,
+      "prompt_retention_days": 14,
+      "requires_redaction": true
+    }
+  ],
+  "blocked_defaults": {
+    "unknown_models": true,
+    "restricted_data": true,
+    "cross_region_without_approval": true
+  }
+}
