@@ -97,6 +97,13 @@ def test_llm_gateway_blocks_unapproved_model():
         raise AssertionError("expected model_not_approved")
 
 
+def test_eval_runner_cases_pass():
+    runner = load_module(SECURE / "eval_runner.py")
+    results = runner.run_eval_cases()
+    assert results
+    assert all(result["passed"] for result in results)
+
+
 if __name__ == "__main__":
     tests = [
         test_redaction,
@@ -106,6 +113,7 @@ if __name__ == "__main__":
         test_secure_db_filters_scope_and_redacts,
         test_secure_rag_filters_branch,
         test_llm_gateway_blocks_unapproved_model,
+        test_eval_runner_cases_pass,
     ]
     for test in tests:
         test()
