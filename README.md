@@ -10,6 +10,8 @@ This repository is intentionally vendor-neutral. It summarizes operational pract
 - `docs/banking-reference-architecture.md` - reference architecture for customer-data-heavy workflows.
 - `docs/threat-model.md` - threat model for agents, tools, RAG, connectors, and audit trails.
 - `docs/eu-ai-data-governance.md` - EU AI Act, GDPR, and data-governance mapping for agentic systems.
+- `docs/evaluation-strategy.md` - what to test before release and in production.
+- `docs/operations-runbook.md` - daily/weekly operations, kill switch, and incident triage.
 - `docs/source-map.md` - source map and why each source matters.
 - `policies/` - copyable policy templates for data classification, tool permissions, and human approval.
 - `checklists/` - release and review checklists.
@@ -27,6 +29,7 @@ python examples/secure-agent/secure_banking_agent.py
 python examples/secure-agent/secure_db_access.py
 python examples/secure-agent/secure_rag.py
 python examples/secure-agent/llm_gateway.py
+python examples/secure-agent/eval_runner.py
 python examples/anti-patterns/insecure_agent.py
 ```
 
